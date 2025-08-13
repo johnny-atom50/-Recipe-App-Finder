@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Recipe Finder App</title>
+
+  <!-- Link to external CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,26 +15,31 @@
   <button id="themeToggle" title="Toggle Dark Mode">🌙</button>
 </div>
 
+<!-- Search Bar -->
+<div id="searchBar">
+  <input id="searchInput" placeholder="Type ingredients Or recipe to Search..." />
+  <button id="searchBtn">Search</button>
+</div>
 
-  <div id="searchBar">
-    <input id="searchInput" placeholder="Type ingredients Or recipe to Search  ..." />
-    <button id="searchBtn">Search</button>
-  </div>
+<!-- Recipe Results -->
+<div id="results"></div>
 
-  <div id="results"></div>
+<!-- Pagination -->
+<div class="pagination" style="display:none">
+  <button id="prevBtn" disabled>Previous</button>
+  <button id="nextBtn" disabled>Next</button>
+</div>
 
-  <div class="pagination" style="display:none">
-    <button id="prevBtn" disabled>Previous</button>
-    <button id="nextBtn" disabled>Next</button>
-  </div>
+<!-- Recipe Details -->
+<div id="recipeDetails" class="details" style="display:none"></div>
 
-  <div id="recipeDetails" class="details" style="display:none"></div>
+<!-- Favorites Section -->
+<div class="favorites">
+  <h2>⭐ Favorites</h2>
+  <div id="favoritesList"></div>
+</div>
 
-  <div class="favorites">
-    <h2>⭐ Favorites</h2>
-    <div id="favoritesList"></div>
-  </div>
-
-  <script src="script.js"></script>
+<!-- Link to external JavaScript -->
+<script src="script.js"></script>
 </body>
 </html>
