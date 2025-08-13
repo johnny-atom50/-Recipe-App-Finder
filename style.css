@@ -1,3 +1,5 @@
+/*  General Page Styling   */
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f4f4f4;
@@ -8,7 +10,9 @@ body {
 }
 h1 { margin: 0; }
 
-/* Header bar with centered title & right toggle */
+
+/*   Header Bar  */
+
 #headerBar {
   display: flex;
   align-items: center;
@@ -17,7 +21,9 @@ h1 { margin: 0; }
   position: relative;
 }
 
+
 /* Dark mode toggle icon */
+
 #themeToggle {
   position: absolute;
   right: 0;
@@ -31,7 +37,9 @@ h1 { margin: 0; }
 }
 #themeToggle:hover { transform: scale(1.2); }
 
-/* Search bar */
+
+/*  Search Bar  */
+
 #searchBar {
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +52,6 @@ h1 { margin: 0; }
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  transition: background 0.3s, color 0.3s;
 }
 #searchBar input {
   flex: 1 1 250px;
@@ -58,13 +65,14 @@ h1 { margin: 0; }
 }
 #searchBar button:hover { background: #e68900; }
 
-/* Recipe cards grid */
+
+/*   Recipe Cards Grid   */
+
 #results {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
 }
-
 .recipe {
   background: #fff;
   border-radius: 8px;
@@ -73,7 +81,7 @@ h1 { margin: 0; }
   box-shadow: 0 2px 5px rgba(0,0,0,.1);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s, background 0.3s, color 0.3s;
+  transition: transform 0.2s;
 }
 .recipe:hover { transform: translateY(-3px); }
 .recipe img {
@@ -88,24 +96,54 @@ h1 { margin: 0; }
   color: #fff;
   padding: 8px;
   border: none;
-  cursor: pointer;
   border-radius: 5px;
-  transition: background 0.3s;
+  cursor: pointer;
 }
 .recipe button:hover { background: #1976d2; }
 
-/* Details panel */
+
+/*  Details Panel  */
+
 .details {
   max-width: 900px;
   margin: 20px auto;
   background: #fff;
   padding: 15px;
   border-radius: 8px;
-  transition: background 0.3s, color 0.3s;
+  text-align: center;
+}
+.details img {
+  display: block;
+  margin: 0 auto;
+}
+.details .text-left {
+  text-align: left;
+  margin-top: 15px;
+}
+.details button {
+  margin-top: 15px;
+  background: #2196f3;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.details button:hover {
+  background: #1976d2;
 }
 
-/* Favorites section */
-.favorites { margin-top: 40px; }
+
+/*   Favorites Section  */
+
+.favorites {
+  margin-top: 40px;
+  text-align: center;
+}
+#favoritesList {
+  display: inline-block;
+  text-align: left;
+}
 .fav-item {
   background: #fff8e1;
   padding: 10px;
@@ -114,8 +152,6 @@ h1 { margin: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  transition: background 0.3s, color 0.3s;
 }
 .fav-left {
   display: flex;
@@ -130,17 +166,17 @@ h1 { margin: 0; }
   padding: 6px 10px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 .fav-item button:hover { background: #c62828; }
 
-/* Pagination */
+
+/*  Pagination   */
+
 .pagination {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
-  flex-wrap: wrap;
 }
 .pagination button {
   padding: 8px 12px;
@@ -149,7 +185,6 @@ h1 { margin: 0; }
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 .pagination button:hover { background: #388e3c; }
 .pagination button[disabled] {
@@ -157,35 +192,34 @@ h1 { margin: 0; }
   cursor: not-allowed;
 }
 
-/* Dark theme styles */
+
+/*   Dark Mode Styles */
+
 body.dark {
   background: #1e1e1e;
   color: #ddd;
 }
+
 body.dark #themeToggle { color: #ffdf5d; }
-body.dark #searchBar input {
-  background: #333;
-  color: #fff;
-  border-color: #555;
-}
 body.dark .recipe,
 body.dark .details,
 body.dark .fav-item {
   background: #2a2a2a;
-  color: #ddd;
 }
 body.dark .fav-item { background: #3a2e1e; }
 
-/* Spin animation */
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+/*   Fade-in Animation   */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-#themeToggle.spin {
-  animation: spin 0.5s ease-in-out;
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
 }
 
-/* Responsive tweaks */
+/*   Responsive   */
 @media (max-width: 768px) {
   #headerBar { flex-direction: column; }
 }
