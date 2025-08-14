@@ -150,7 +150,8 @@ function buildDetails(meal) {
   detailsEl.scrollIntoView({ behavior: "smooth" });
 }
 
-/* ====== Favorites Management ====== */
+
+/* Favorites Management */
 function addFavorite(id, name, image) {
   const favs = JSON.parse(localStorage.getItem("favorites")) || [];
   if (favs.some(f => f.id == id)) return alert("Already in favorites");
@@ -187,10 +188,12 @@ function renderFavorites() {
   favListEl.classList.add("fade-in");
 }
 
-/* ====== Initialize Favorites ====== */
+
+/*  Initialize Favorites   */
 window.onload = renderFavorites;
 
-/* ====== Theme Toggle (Dark/Light) ====== */
+
+/*   Theme Toggle (Dark/Light)   */
 const themeToggle = document.getElementById('themeToggle');
 if (localStorage.getItem('theme') === 'dark') {
   document.body.classList.add('dark');
